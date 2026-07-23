@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Tracking | CleanSpin Premium Laundry</title>
+  <meta name="description" content="Track your laundry or dry cleaning order in real-time. Check live status logs from collection to washing and doorstep return.">
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sticky Glassmorphic Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <div class="icon-primary me-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px; border-radius: 10px; background-color: var(--primary-light); color: var(--primary);">
+          <i class="bi bi-water fs-5"></i>
+        </div>
+        <span class="fw-800 text-dark fs-4">Clean<span class="text-primary">Spin</span></span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom active" href="tracking.html">Order Tracking</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="faq.html">FAQ</a></li>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <a class="btn-primary-custom" href="pickup.html">
+              <span>Book Pickup</span>
+              <i class="bi bi-calendar-check"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="py-5 hero-section text-center">
+    <div class="container">
+      <span class="badge-custom">Live Tracker</span>
+      <h1 class="display-4 fw-800 mb-3">Track Your Order</h1>
+      <p class="text-muted lead max-width-600 mx-auto">Monitor the real-time processing stage of your wardrobe collection from pickup to delivery.</p>
+    </div>
+  </section>
+
+  <!-- Tracking Input Section -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 fade-in">
+          <div class="card-custom border shadow-sm text-center">
+            <h4 class="mb-3">Enter Order Details</h4>
+            <p class="text-muted small">Input the unique 8-character code sent to your registered phone number or email receipt.</p>
+            <form id="tracking-form" class="mt-4">
+              <div class="input-group mb-3">
+                <span class="input-group-text bg-white border-end-0 border-2" style="border-radius: 12px 0 0 12px; border-color: var(--border-color);"><i class="bi bi-search text-muted"></i></span>
+                <input type="text" class="form-control form-control-custom border-start-0 border-2" style="border-radius: 0 12px 12px 0;" id="orderIdInput" placeholder="e.g. LDY10254" required>
+              </div>
+              <button type="submit" class="btn-primary-custom w-100 justify-content-center py-2.5">Track Order</button>
+            </form>
+            <div class="mt-3 text-start bg-light p-2.5 rounded-3 d-flex align-items-center gap-2">
+              <i class="bi bi-lightbulb text-warning fs-5"></i>
+              <small class="text-muted">Type <strong class="text-primary">LDY10254</strong> to test the simulated status dashboard tracker.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tracking Result Dashboard (Initially Hidden) -->
+  <section id="tracking-result" class="py-5 bg-light d-none">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card-custom bg-white border shadow-md p-4 mb-4">
+            <div class="row g-3 justify-content-between align-items-center">
+              <div class="col-sm-6">
+                <span class="text-muted small">Order ID:</span>
+                <h5 class="mb-0 text-dark fw-bold">#LDY10254</h5>
+              </div>
+              <div class="col-sm-6 text-sm-end">
+                <span class="badge bg-primary px-3 py-2 rounded-pill">Washing stage</span>
+              </div>
+            </div>
+            <hr class="my-4">
+
+            <!-- Progress Timeline -->
+            <div class="tracking-timeline">
+              <!-- Step 1 -->
+              <div class="timeline-step completed">
+                <div class="timeline-dot">✓</div>
+                <div class="timeline-content">
+                  <h6 class="fw-bold mb-1">Order Received</h6>
+                  <p class="text-muted small mb-0">Your pickup booking was accepted and registered in our system scheduler.</p>
+                  <small class="text-primary mt-1 d-block fw-600">July 23, 2026 - 10:15 AM</small>
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="timeline-step completed">
+                <div class="timeline-dot">✓</div>
+                <div class="timeline-content">
+                  <h6 class="fw-bold mb-1">Picked Up</h6>
+                  <p class="text-muted small mb-0">Our collection driver completed contactless retrieval from your residence.</p>
+                  <small class="text-primary mt-1 d-block fw-600">July 24, 2026 - 09:30 AM</small>
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="timeline-step active">
+                <div class="timeline-dot"><i class="bi bi-arrow-repeat spin"></i></div>
+                <div class="timeline-content">
+                  <h6 class="fw-bold mb-1 text-primary">Washing In Progress</h6>
+                  <p class="text-muted small mb-0">Your garments are undergoing specialized cleaning cycles inside our facility.</p>
+                  <small class="text-primary mt-1 d-block fw-600">Current Phase</small>
+                </div>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="timeline-step">
+                <div class="timeline-dot">4</div>
+                <div class="timeline-content">
+                  <h6 class="fw-bold mb-1 text-muted">Drying</h6>
+                  <p class="text-muted small mb-0">Garments will be spin-dried and prepared for professional styling press.</p>
+                </div>
+              </div>
+
+              <!-- Step 5 -->
+              <div class="timeline-step">
+                <div class="timeline-dot">5</div>
+                <div class="timeline-content">
+                  <h6 class="fw-bold mb-1 text-muted">Ready</h6>
+                  <p class="text-muted small mb-0">Clothes are packaged inside breathable garment sheets on clean hangers.</p>
+                </div>
+              </div>
+
+              <!-- Step 6 -->
+              <div class="timeline-step">
+                <div class="timeline-dot">6</div>
+                <div class="timeline-content">
+                  <h6 class="fw-bold mb-1 text-muted">Out for Delivery</h6>
+                  <p class="text-muted small mb-0">Our validation dispatch handles route scheduling for delivery valets.</p>
+                </div>
+              </div>
+
+              <!-- Step 7 -->
+              <div class="timeline-step">
+                <div class="timeline-dot">7</div>
+                <div class="timeline-content">
+                  <h6 class="fw-bold mb-1 text-muted">Delivered</h6>
+                  <p class="text-muted small mb-0">Doorstep return completed. Have a fresh spin!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Error message container -->
+  <section id="tracking-error" class="py-4 bg-white d-none">
+    <div class="container text-center">
+      <div class="alert alert-danger max-width-600 mx-auto rounded-3" role="alert">
+        <i class="bi bi-exclamation-triangle-fill fs-5 me-2"></i>
+        <span><strong>Order Not Found!</strong> Please check the ID spelling and format. Valid code format looks like <strong>LDY10254</strong>.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <a class="navbar-brand d-flex align-items-center mb-3" href="index.html">
+            <div class="icon-primary me-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px; border-radius: 10px; background-color: var(--primary-light); color: var(--primary);">
+              <i class="bi bi-water fs-5"></i>
+            </div>
+            <span class="fw-800 text-dark fs-4">Clean<span class="text-primary">Spin</span></span>
+          </a>
+          <p class="text-muted">Premium on-demand laundry and dry cleaning services delivering freshness to your doorsteps.</p>
+          <div class="mt-4">
+            <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5 class="mb-4">Services</h5>
+          <ul class="list-unstyled">
+            <li><a href="services.html" class="footer-link">Wash & Fold</a></li>
+            <li><a href="services.html" class="footer-link">Dry Cleaning</a></li>
+            <li><a href="services.html" class="footer-link">Steam Ironing</a></li>
+            <li><a href="services.html" class="footer-link">Shoe Cleaning</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5 class="mb-4">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="pricing.html" class="footer-link">Pricing Plans</a></li>
+            <li><a href="tracking.html" class="footer-link">Track Order</a></li>
+            <li><a href="faq.html" class="footer-link">Support FAQs</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h5 class="mb-4">Newsletter</h5>
+          <p class="text-muted">Subscribe to receive laundry tips and exclusive promo coupons.</p>
+          <form class="newsletter-form d-flex gap-2">
+            <input type="email" class="form-control form-control-custom" placeholder="Enter email" required>
+            <button type="submit" class="btn btn-primary rounded-pill px-4" style="background-color: var(--primary); border: none;">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="border-top border-2 mt-5 pt-4 text-center">
+        <p class="text-muted mb-0">&copy; 2026 CleanSpin Laundry Services Private Limited. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

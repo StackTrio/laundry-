@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Pickup | CleanSpin Premium Laundry</title>
+  <meta name="description" content="Schedule a contactless laundry pickup at your home or office. Pick your preferred service type, date and time slots.">
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sticky Glassmorphic Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <div class="icon-primary me-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px; border-radius: 10px; background-color: var(--primary-light); color: var(--primary);">
+          <i class="bi bi-water fs-5"></i>
+        </div>
+        <span class="fw-800 text-dark fs-4">Clean<span class="text-primary">Spin</span></span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="tracking.html">Order Tracking</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="faq.html">FAQ</a></li>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <a class="btn-primary-custom active text-white" href="pickup.html">
+              <span>Book Pickup</span>
+              <i class="bi bi-calendar-check"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Form Section -->
+  <section class="py-5 hero-section">
+    <div class="container">
+      <div class="text-center max-width-600 mx-auto mb-5 fade-in">
+        <span class="badge-custom">Schedule</span>
+        <h1 class="display-5 fw-800">Book Your Pickup Slot</h1>
+        <p class="text-muted">Enter details below to schedule your contactless doorstep collection service.</p>
+      </div>
+
+      <div class="row g-5">
+        <!-- Form Fields -->
+        <div class="col-lg-8 fade-in">
+          <div class="card-custom border shadow-sm">
+            <h4 class="mb-4">1. Pickup Information</h4>
+            <form id="pickup-form" class="row g-3">
+              <div class="col-md-6">
+                <label for="pickup-name" class="form-label form-label-custom">Full Name</label>
+                <input type="text" class="form-control form-control-custom" id="pickup-name" placeholder="John Doe" required>
+              </div>
+              <div class="col-md-6">
+                <label for="pickup-phone" class="form-label form-label-custom">Phone Number</label>
+                <input type="tel" class="form-control form-control-custom" id="pickup-phone" placeholder="98765 43210" required>
+              </div>
+              <div class="col-12">
+                <label for="pickup-email" class="form-label form-label-custom">Email Address</label>
+                <input type="email" class="form-control form-control-custom" id="pickup-email" placeholder="john@example.com" required>
+              </div>
+              <div class="col-12">
+                <label for="pickup-address" class="form-label form-label-custom">Collection Address</label>
+                <textarea class="form-control form-control-custom" id="pickup-address" rows="3" placeholder="Apartment / Suite, Street Name, City, Pincode" required></textarea>
+              </div>
+              
+              <h4 class="mb-3 mt-5">2. Preferences</h4>
+              <div class="col-md-6">
+                <label for="pickup-date" class="form-label form-label-custom">Pickup Date</label>
+                <input type="date" class="form-control form-control-custom" id="pickup-date" required>
+              </div>
+              <div class="col-md-6">
+                <label for="pickup-time" class="form-label form-label-custom">Preferred Time Slot</label>
+                <select class="form-select form-control-custom" id="pickup-time" required>
+                  <option value="" disabled selected>Select slot</option>
+                  <option value="09:00 - 12:00">Morning (09:00 AM - 12:00 PM)</option>
+                  <option value="12:00 - 15:00">Noon (12:00 PM - 03:00 PM)</option>
+                  <option value="15:00 - 18:00">Afternoon (03:00 PM - 06:00 PM)</option>
+                  <option value="18:00 - 21:00">Evening (06:00 PM - 09:00 PM)</option>
+                </select>
+              </div>
+              <div class="col-md-12">
+                <label for="pickup-service" class="form-label form-label-custom">Service Selection</label>
+                <select class="form-select form-control-custom" id="pickup-service" required>
+                  <option value="wash-fold" selected>Wash & Fold (₹99/kg)</option>
+                  <option value="wash-iron">Wash + Steam Iron (₹149/kg)</option>
+                  <option value="dry-cleaning">Premium Dry Cleaning (₹299/pc)</option>
+                  <option value="shoe-cleaning">Shoe Cleaning (₹199/pair)</option>
+                  <option value="curtain-cleaning">Curtain Cleaning (₹399/panel)</option>
+                  <option value="carpet-cleaning">Carpet Cleaning (₹599/room)</option>
+                  <option value="blanket-cleaning">Blanket Cleaning (₹249/pc)</option>
+                  <option value="express-service">Express Delivery Service (₹299 onwards)</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label for="pickup-notes" class="form-label form-label-custom">Special Instructions / Notes</label>
+                <textarea class="form-control form-control-custom" id="pickup-notes" rows="3" placeholder="Tell us if you have delicate items, specific fabric softness preferences, or stain pre-treatment requests."></textarea>
+              </div>
+              
+              <div class="col-12 mt-4 text-end">
+                <button type="submit" class="btn-primary-custom px-5 py-3">Book Collection Pickup</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Summary Column -->
+        <div class="col-lg-4 fade-in">
+          <div class="card-custom border shadow-sm sticky-top" style="top: 100px; z-index: 10;">
+            <h4 class="mb-4">Order Summary</h4>
+            <div class="bg-light p-3 rounded-3 mb-4">
+              <div class="summary-line">
+                <span class="text-muted">Selected Service:</span>
+                <span class="fw-bold" id="summary-service">Wash & Fold</span>
+              </div>
+              <div class="summary-line">
+                <span class="text-muted">Starting Rate:</span>
+                <span class="fw-bold" id="summary-price">₹99</span>
+              </div>
+              <div class="summary-line">
+                <span class="text-muted">GST / Service Fee (18%):</span>
+                <span class="fw-bold" id="summary-tax">₹18</span>
+              </div>
+              <hr class="my-3">
+              <div class="summary-line">
+                <span class="text-dark fw-bold">Estimated Total:</span>
+                <span class="text-primary fw-800 fs-5" id="summary-total">₹117</span>
+              </div>
+            </div>
+            
+            <div class="d-flex align-items-start gap-3 mt-3">
+              <i class="bi bi-info-circle text-primary fs-5 mt-1"></i>
+              <p class="text-muted small mb-0">This rate is a starting estimate. Final bill will be generated once our valets weigh the laundry clothes at our care facility.</p>
+            </div>
+            <div class="d-flex align-items-start gap-3 mt-3">
+              <i class="bi bi-shield-check text-success fs-5 mt-1"></i>
+              <p class="text-muted small mb-0">Free doorstep pickup and delivery is included on all order values exceeding ₹500.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modern Confirmation Modal -->
+  <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow-lg p-4">
+        <div class="modal-header border-0 pb-0 text-center justify-content-center">
+          <div class="icon-container bg-success text-white d-flex align-items-center justify-content-center rounded-circle" style="width: 72px; height: 72px; font-size: 2.25rem;">
+            <i class="bi bi-check-circle-fill"></i>
+          </div>
+        </div>
+        <div class="modal-body text-center mt-3">
+          <h2 class="fw-800 text-dark">Pickup Scheduled!</h2>
+          <p class="text-muted">Your booking has been received and registered in our database system.</p>
+          
+          <div class="bg-light p-3 rounded-3 text-start my-4">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted small">Client Name:</span>
+              <span class="fw-bold small" id="modal-name">John Doe</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted small">Phone Number:</span>
+              <span class="fw-bold small" id="modal-phone">9876543210</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted small">Pickup Date:</span>
+              <span class="fw-bold small" id="modal-date">2026-07-25</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted small">Selected Slot:</span>
+              <span class="fw-bold small" id="modal-time">09:00 AM - 12:00 PM</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted small">Service:</span>
+              <span class="fw-bold small" id="modal-service">Wash & Fold</span>
+            </div>
+            <hr class="my-2">
+            <div class="d-flex justify-content-between">
+              <span class="text-dark fw-bold small">Est. Total:</span>
+              <span class="text-primary fw-800 small" id="modal-total">₹117</span>
+            </div>
+          </div>
+          
+          <div class="alert alert-info py-2 px-3 small border-0 text-start" role="alert">
+            <i class="bi bi-bookmark-star-fill me-2"></i> Use tracking ID <strong>LDY10254</strong> to track this simulated order on the tracking portal.
+          </div>
+          
+          <div class="row g-2 mt-4">
+            <div class="col-6">
+              <a href="tracking.html" class="btn btn-primary w-100 rounded-pill py-2.5" style="background-color: var(--primary); border: none;">Track Order</a>
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-outline-secondary w-100 rounded-pill py-2.5" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <a class="navbar-brand d-flex align-items-center mb-3" href="index.html">
+            <div class="icon-primary me-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px; border-radius: 10px; background-color: var(--primary-light); color: var(--primary);">
+              <i class="bi bi-water fs-5"></i>
+            </div>
+            <span class="fw-800 text-dark fs-4">Clean<span class="text-primary">Spin</span></span>
+          </a>
+          <p class="text-muted">Premium on-demand laundry and dry cleaning services delivering freshness to your doorsteps.</p>
+          <div class="mt-4">
+            <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5 class="mb-4">Services</h5>
+          <ul class="list-unstyled">
+            <li><a href="services.html" class="footer-link">Wash & Fold</a></li>
+            <li><a href="services.html" class="footer-link">Dry Cleaning</a></li>
+            <li><a href="services.html" class="footer-link">Steam Ironing</a></li>
+            <li><a href="services.html" class="footer-link">Shoe Cleaning</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5 class="mb-4">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="pricing.html" class="footer-link">Pricing Plans</a></li>
+            <li><a href="tracking.html" class="footer-link">Track Order</a></li>
+            <li><a href="faq.html" class="footer-link">Support FAQs</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h5 class="mb-4">Newsletter</h5>
+          <p class="text-muted">Subscribe to receive laundry tips and exclusive promo coupons.</p>
+          <form class="newsletter-form d-flex gap-2">
+            <input type="email" class="form-control form-control-custom" placeholder="Enter email" required>
+            <button type="submit" class="btn btn-primary rounded-pill px-4" style="background-color: var(--primary); border: none;">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="border-top border-2 mt-5 pt-4 text-center">
+        <p class="text-muted mb-0">&copy; 2026 CleanSpin Laundry Services Private Limited. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Autofill date field to tomorrow
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const day = ("0" + tomorrow.getDate()).slice(-2);
+    const month = ("0" + (tomorrow.getMonth() + 1)).slice(-2);
+    const dateString = tomorrow.getFullYear() + "-" + (month) + "-" + (day);
+    document.getElementById('pickup-date').value = dateString;
+  </script>
+</body>
+</html>
